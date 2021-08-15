@@ -1,0 +1,73 @@
+<html>
+
+<head>
+	<style>
+		.features {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			min-height: 100vh;
+		}
+	</style>
+	<meta charset="UTF-8">
+	<title>Titanic Web App</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	
+</head>
+
+<body>
+	<div class="features">
+		<h1>Predict survival of Titanic passenger</h1>
+		
+		<form action="{{ url_for('predict') }}" method="post">
+			<label for="pclass">Passenger Class (1-3)</label>
+			<input class="form-control" name="pclass" type="number" id="pclass" min="1" max="3" />
+			
+			<label for="sex">Sex</label>
+			<select class="form-control" name="sex" id="sex">
+				<option value="1">Male</option>
+				<option value="0">Female</option>
+			</select>
+			
+			<label for="fare">Fare</label>
+			<input class="form-control" name="fare" type="number" id="fare" min="0" />
+			
+			<label for="cabin">Cabin Type (0-8)</label>
+			<input class="form-control" name="cabin" type="number" id="cabin" min="0" max="8"/>
+			
+			<br>
+			<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+		</form>
+		
+	<br>
+	<br>
+	
+	{{ prediction_text }}
+	
+	</div>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
